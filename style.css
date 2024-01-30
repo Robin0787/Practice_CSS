@@ -1,81 +1,154 @@
 :root {
-  --primary-bg: rgb(197, 197, 197);
-  --secondary-bg: white;
-  --primary-color: black;
+  --primary-color: red;
+  --primary-bg: black;
+  --primary-text: white;
   --gradient: linear-gradient(
-    45deg,
-    #845ec2,
-    #d65db1,
-    #ff6f91,
-    #ff9671,
-    #ffc75f,
-    #f9f871
+    90deg,
+    rgb(10, 88, 255),
+    rgb(241, 14, 204),
+    rgb(230, 255, 7)
   );
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-family: "Open Sans";
+}
+
 body {
-  /* background-color: var(--primary-bg); */
-  color: var(--primary-color);
-  height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
+body main {
+  width: 50%;
+  margin-inline: auto;
+  padding-block: 5rem;
 }
 
-main {
-  background: var(--gradient);
-  background-size: 500%;
-  animation: bg-animation 5s infinite alternate;
-  padding: 3rem;
-  border-radius: 6px;
-  margin: 60px;
-  padding: 10px;
-}
-
-main section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 4px;
-}
-
-main h1 {
-  font-size: 6rem;
-  text-transform: uppercase;
+body main section h1.page-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
   font-weight: 900;
-  font-style: italic;
-  line-height: 0.8;
-  /* background: var(--gradient);
-  background-clip: text;
-  color: transparent;
-  background-size: 300%;
-  animation: bg-animation 3s infinite alternate; */
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  text-shadow: 2px 2px 0 var(--primary-color), 4px 4px 0 indigo;
 }
 
-main button {
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  background: var(--gradient);
+body main section p.page-desc {
+  text-align: justify;
+  color: var(--primary-text);
+}
+
+hr {
+  --size: 6px;
+  margin: 2rem 0 4rem;
+  border: 0;
+  height: var(--size);
+  border-radius: 100vw;
+  background-color: indigo;
+  box-shadow: 0 calc(var(--size) * 2) 0 var(--primary-color),
+    0 calc(var(--size) * 4) 0 indigo, 0 calc(var(--size) * 6) 0 red;
+}
+
+body main section p a.fancy-link-1 {
+  color: rgb(212, 152, 255);
+  text-decoration: none;
+  line-height: 1.2;
+  background-image: linear-gradient(
+    90deg,
+    rgb(10, 88, 255),
+    rgb(241, 14, 204),
+    rgb(230, 255, 7)
+  );
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left 1.5em;
+  padding-block: 0.25em;
+  transition: color 300ms, background-size 500ms ease;
+}
+
+body main section p a.fancy-link-1:hover,
+a.fancy-link-1:focus {
+  color: rgb(174, 60, 255);
+  background-size: 100% 2px;
+}
+
+/* Button Effect */
+
+button {
+  margin-top: 1rem;
+  color: white;
+  border: 0;
+  padding: 12px 40px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(10, 88, 255),
+    rgb(241, 14, 204),
+    rgb(255, 17, 17)
+  );
   background-size: 300%;
   background-position: right;
-  cursor: pointer;
-  transition: background-position 500ms;
+  transition: background-position 1s ease;
 }
 
-main button:hover,
-main button:focus {
+button:hover {
   background-position: left;
+}
+
+.section-image-text {
+  margin-block: 3rem;
+}
+
+.image-text,
+.gradient-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: bolder;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.image-text {
+  background: url("https://images.unsplash.com/photo-1701990003443-2c552816e468?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDM3NzUyNzJ8&ixlib=rb-4.0.3&q=80&w=800");
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text {
+  background: linear-gradient(90deg, red, rgb(255, 8, 201), indigo);
+  background-clip: text;
+  color: transparent;
+}
+
+body main section p a.fancy-link-2 {
+  color: white;
+  text-decoration: none;
+  line-height: 1.2;
+  background-image: linear-gradient(
+    90deg,
+    rgb(10, 88, 255),
+    rgb(241, 14, 204) 50%,
+    currentColor 50%
+  );
+  background-size: 200% 2px;
+  background-repeat: no-repeat;
+  background-position: right 1.5em;
+  padding-block: 0.25em;
+  transition: color 300ms, background-position 500ms ease;
+}
+
+body main section p a.fancy-link-2:hover,
+a.fancy-link-2:focus {
+  color: rgb(212, 152, 255);
+  background-position: left 1.5em;
 }
